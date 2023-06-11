@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PortFolio Website-Ayush Chakraborty</title>
+    <link rel="icon" href="A-1.jpg">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300&display=swap");
+        *{
+            font-family: 'Be Vietnam Pro', sans-serif;
+
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+scroll-behavior: smooth;
+        }
+
+:root{
+    --bgOrange:#e84949;
+}
+
+.wrapper{
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.container{
+    width: 1200px;
+    margin: 0 auto;/*-->>This will place the container at the middle */
+}
+
+.navBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+/*Designing Section*/
+padding-top: 1rem;
+
+}
+
+.navBar_Left_Top_Logo{
+    display: flex;
+    align-items: center;
+    justify-content: baseline;
+}
+
+.logo{
+    width: 80px;
+    margin-top:12px ;
+}
+
+.navBar_Items_Right_Top{
+    display: flex;
+    gap: 2rem;
+    padding: 0 4em;
+    /*-->The CSS property padding: 0 4rem; is used to set the padding values for an element.
+
+    In this particular case, 0 refers to the top and bottom padding, and 4rem refers to the left and right padding. The rem unit is relative to the font-size of the root element, which is typically the <html> element.
+    
+    Therefore, the CSS rule padding: 0 4rem; sets the padding of the element to 0 for the top and bottom sides, and 4 times the value of the root font-size for the left and right sides. This will create equal padding on the left and right sides while having no padding on the top and bottom.*/
+}
+
+.logo_Text{
+margin-left: -1.2rem;/*-->>This will place ohn Doe close to logo image*/
+font-size: 28px;
+
+}
+
+.navBar_Items_Right_Top div{
+    font-weight: 500;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.navBar_Items_Right_Top div a{
+    text-decoration: none;
+    color: black;
+}
+
+/*or-->>This will also work
+ a{
+    text-decoration:none 
+    */
+
+.navBar_Items_Right_Top div:hover{
+transition: 0.6s;
+    font-weight: bold;
+}
+
+
+.btn-pink{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+        width: fit-content;
+        height: 50px;
+    background-color: #e84949;
+    padding: 0.8rem 2.3rem;
+    color: white;
+    font-size: 18px;
+    box-shadow: 5px 5px 7px 0px #0000003f;
+position: relative;
+z-index: 1;
+}
+
+.btn-pink::before{
+    content: "";
+    background-color: #1f1f1f;
+    position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+transform: scaleX(0);
+transform-origin: left;
+transition: 1s ease;
+z-index: -1;
+}
+
+.btn-pink:hover::before{
+transform: scaleX(1);
+}
+
+.hero_Section{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+gap: 5rem;
+margin: 4rem auto;
+padding:0 1rem;
+padding-bottom:8rem;
+}
+
+.hero_Sec_Down_left_Faded_text{
+position:absolute;
+user-select: none;
+font-size: 7em;
+color: rgb(231,231,231); 
+ bottom: -16%;
+ left: -1%;
+ font-weight: bold;
+ transition: all 3s;
+
+}
+
+.hero_sec_left{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    /*align-items: center;*/
+    gap: 2rem;
+}
+
+
+.hero_sec_left_Heading{
+    font-size: 35px;
+    font-weight: 500;
+    color: #343d68;
+}
+
+.role{
+    color: #4e45d5;
+    font-weight: 800;
+}
+
+.hero_sec_left_SubHeading1{
+font-size: 45px;
+}
+
+.hero_section_left_desc{
+    margin-top:1rem ;
+    width: 70%;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.hero_sec_right{
+position: relative;
+ 
+}
+
+.absolute{
+    position: absolute;
+}
+
+.user-image{
+    position: relative;
+    padding: 2.5rem;
+    filter: grayscale(1);
+    transition: all 1s;
+    animation: scaleImage 5s linear infinite;
+}
+
+
+.user-image img{
+    z-index: -9; 
+    
+}
+
+@keyframes scaleImage {
+    0%{
+        filter: grayscale(0);
+        transform: scale(1);
+    }
+
+50%{
+    transform: scale(1.1);
+    filter: grayscale(1);
+    box-shadow: 3px 3px 10px black ;
+}
+
+100%{
+    transform: scale(1);
+    filter: grayscale(0);
+}
+
+}
+
+ .icon-dots{ 
+   
+    z-index:9;
+    bottom:-1rem;
+    right:0;
+animation-name:dotsAnimation;
+animation-duration: 5s;
+animation-iteration-count: infinite;
+
+}
+
+@keyframes dotsAnimation {
+    0%{
+        transform: translateY(0px);
+    }
+
+    50%{
+        transform: translateY(-15px);
+    }
+
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+.icons-cube{
+    z-index: 9;
+top: -0.8em;
+right:1em;
+animation-name:cubeRotate;
+animation-duration: 3s;
+animation-iteration-count: infinite;
+}
+
+@keyframes cubeRotate {
+    0%{
+        transform: rotateY(0deg) translateY(0px);
+    }
+
+    50%{
+        transform: rotateY(180deg) translateY(-12px);
+    }
+
+    100%{
+        transform: rotateY(360deg) translateY(0px);
+    }
+}
+
+
+.icons-circle{
+    z-index:9;
+    left:0;
+    bottom:0;
+    animation-name:shakeEffect;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+} 
+
+ @keyframes shakeEffect {
+  
+    50%{
+        left:15%;
+        bottom:10%;
+    }
+ 
+  }
+
+
+  .icons-zigzags{
+    z-index:9;
+    top:1.5em;
+    left:-0.3em;
+    animation:zigzagAnimation 5s ease-in infinite;
+  }
+
+  @keyframes zigzagAnimation{
+    50%{
+        left:5%;
+        top:2%;
+       
+    }
+  }
+  .icon-plus{
+    z-index:9;
+    top:-0.8rem;
+    left: 50%;
+    animation:shakeEffectPlus 5s ease-in infinite;
+  }
+
+  @keyframes shakeEffectPlus {
+    50%{
+        top:3%;
+        left:48%
+    }
+  }
+
+/*Project Section Entry*/
+
+.project_sec{
+    background-color: rgba(231, 231, 231);
+    margin-top: 4rem;
+}
+
+.project_Header{
+    color:var(--bgOrange);
+    font-size: 90px;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.project-container{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 0;
+    gap: 120px;
+
+}
+
+.project-card{
+    width: 90%;
+    height: 550px;
+    background-image: url(./images/projects/Project1.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+    position: relative;
+    box-shadow: 0px 0px 40px #1f1f1f;
+     z-index: 0;
+     border-radius: 20px;
+
+}
+
+.project-card::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #1f1f1f9a;
+    background-image: linear-gradient(45deg,#343d68,#343d68be,#343d687c);
+    transform: scaleX(0);
+    transform-origin:left;
+    transition: all 0.4s;
+    z-index: 1;
+   
+}
+
+.project-card:hover::before{
+    transform: scaleX(1);
+}
+
+
+.project-number{
+    position: absolute;
+    font-size: 200px;
+    font-weight: 600;
+    color: white;
+    z-index: 10;
+    display: none;
+    /*or opsacity:0*/
+    
+}
+
+.project-card:hover .project-number{
+    display: block;
+    /*Or opacity:1-->>Both will work*/ 
+}
+
+
+
+.project-number-right{
+    right: -40px;
+    top: -45px;
+}
+
+.project-number-left{
+    left: -40px;
+    top: -45px;
+
+}
+
+.project-content{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 2em;
+    bottom: 20%;
+    z-index: 5;
+    gap: 1em;
+    transition:all 0.4s;
+}
+
+.project-content-left{
+    left: 10%;
+}
+
+.project-content-right{
+    right: 10%;
+}
+
+.project-skills-container{
+    width: 60%;
+    display:flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.project-skill{
+    width:40px;
+}
+
+.project-heading{
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 3rem;
+}
+
+.project-subHeading{
+    width: 70%;
+    font-size: 16px;
+    font-style: italic;
+    user-select: none;
+}
+
+.btn-project:hover{
+border: none;
+}
+
+.icon{
+    cursor:pointer;
+    color: white;
+    font-size: 35px;
+}
+
+.icon:hover{
+    color: var(--bgOrange);
+    transition: all 0.4s ease;
+}
+
+.project-card:hover .project-content{
+transform: scale(1.1);
+}
+
+#project1{
+    background-image: url(P1.png);
+}
+
+
+#project2{
+margin-left: 120px; 
+    background-image: url(P2.png);
+}
+
+
+#project3{
+    background-image: url(P3.png);
+}
+
+
+#project4{
+    margin-left: 120px; 
+    background-image: url(./images/projects/Project4.png);
+}
+
+.skills-container{
+position: relative;
+display: flex;
+padding: 5rem;
+margin: 10rem auto;
+gap: 30px;
+
+}
+
+.skills-container-left{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.skills-container-right{
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    gap: 2rem;  
+    justify-content: center;
+}
+
+.skills-fade-text{
+    position: absolute;
+    font-size: 15em;
+    font-style: bold;
+    color: rgb(231,231,231);
+    bottom: -34.5%;
+    right: -4%;
+    user-select: none;
+    overflow-y: hidden;
+}
+
+.blob-style{
+    position: absolute;
+    z-index: -5;
+    top: 50%;
+    bottom: 50%;
+    transform: translate(-50%,-50%);
+     animation: blobAnimate 3s linear infinite;
+}
+
+@keyframes blobAnimate {
+    50%{
+        top: 54%;
+        left: 46%
+    }
+}
+
+.skills-logo{
+    width: 90px;
+    transition: all 0.5s;
+}
+
+.skills-logo:hover{
+    transform: scale(1.2);
+}
+
+.skills-heading{
+    font-size: 50px;
+    font-style: bold;
+    color: var(--bgOrange);
+    line-height: 50px;
+}
+
+.caps{
+    font-size: 90px;
+}
+
+.skill-subHeading{
+    margin-top: 1rem;
+    width: 85%;
+    text-align: justify;
+}
+
+.skill-subHeading p{
+margin: 15px 0;
+
+}
+
+
+.contactus-form-container{
+    width: 100%;
+    background-color: rgb(231, 231, 231);
+}
+
+.contactus-Heading{
+    font-size: 5em;
+    color: var(--bgOrange);
+    padding-top:2rem ;
+}
+
+.contactus-Sub-Heading{
+    font-size: 3rem;
+    color: #343d68aa;
+    text-transform: capitalize;
+    text-shadow:9px 9px 7px grey;
+}
+
+.contactus-form-container{
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.HereForm{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 70%;
+    margin: 2rem 5rem;
+}
+
+.formfield-container{
+    width: 100%;
+}
+
+.Formfield{
+    width: 100%;
+    height: 42px;
+    padding: 0 2rem;
+    font-size: 18px;
+border-radius: 5px;
+box-shadow: 2px 2px 10px #1f1f1f;
+font-weight: 500;
+margin: 17px;
+border: none;
+}
+
+.formfield-textarea{
+    height: auto;
+    padding-top: 1rem;
+    margin: 17px;
+    border-radius: 5px;
+    box-shadow:2px 2px 10px #1f1f1f;
+}
+
+#submit-btn{
+    border: none;
+    font-size: 1.4rem;
+    margin: 1rem 0;
+}
+
+#submit-btn:hover{
+    transform: scale(0.9);
+}
+
+.submit-icon{
+    padding: 0 1rem;
+    font-size: 1.5rem;
+}
+
+footer{
+    position: relative;
+margin-top: -1px;
+background-color: #343d68;
+padding: 5rem;
+}
+
+.footer-wrapper{
+    display: flex;
+    gap: 1rem;
+    padding: 1.2rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-faded-text{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    color: #535c87;
+    user-select: none;
+    font-size: 5em;
+}
+
+
+.link-wrapper{
+    display: flex;
+    gap: 1.2rem;
+
+}
+
+.link-wrapper div a{
+    color: white;
+    text-decoration: none;
+    transition: all 0.6s ease;
+}
+
+.link-wrapper div a:hover{
+    color: var(--bgOrange);
+}
+
+.icon-wrapper{
+    display: flex;
+    gap: 1rem;
+}
+
+    </style>
+</head>
+<body>
+   
+<div class="wrapper">
+
+<div class="container">
+
+<div class="navBar">
+
+<div class="navBar_Left_Top_Logo">
+    <img src="AYUSH-logos_black.png" alt="Error" class="logo">
+    <div class="logo_Text">yush Chakraborty</div>
+</div>
+
+<div class="navBar_Items_Right_Top">
+    <div><a href="#projects">Projects</a></div>
+    <div><a href="#skills">Skills</a></div>
+    <div><a href="#contactme">Contact Me</a></div>
+</div>
+
+</div>
+
+<div class="hero_Section">
+    
+    <div class="hero_Sec_Down_left_Faded_text">Ayush.C</div>
+
+<div class="hero_sec_left">
+    <div class="hero_sec_left_Heading">
+     Hi! Ayush Chakraborty
+    </div>
+    
+    <div class="hero_sec_left_Heading hero_sec_left_SubHeading1">
+    I am a <span class="role"></span>
+    </div>
+
+<div class="hero_section_left_desc">
+    I'm a software developer and here is my portfolio website.Here you'll learn about my journey as a Software Developer.
+</div>
+
+<div class="btn-pink">Hire Me</div>
+
+</div>
+
+
+<div class="hero_sec_right">
+
+    <div class="user-image">
+        <img src="ayushM.jpg" alt="Error">
+    </div>
+
+<div class="absolute icons icon-dots">
+    <img src="./images/userAsset/dots.png" alt="Error">
+</div>
+ 
+
+<div class="absolute icons icons-cube">
+    <img src="./images/userAsset/cube.png" alt="Error">
+</div>
+
+
+<div class="absolute icons icons-circle">
+    <img src="./images/userAsset/circle.png" alt="Error">
+</div>
+
+
+<div class="absolute icons icons-zigzags">
+    <img src="./images/userAsset/zigzags.png" alt="Error">
+</div>
+
+
+<div class="absolute icons icons-plus">
+    <img src="./images/userAsset/plus.png" alt="Error">
+</div>
+
+
+</div>
+</div>
+</div>
+
+   <div class="project_sec" id="projects">
+
+<h2 class="project_Header">Projects</h2>
+
+<div class="project-container">
+    <div class="project-card" id="project1">
+        <div class="project-number project-number-right">01</div>
+        <div class="project-content project-content-left">
+
+            <div class="project-skills-container">
+    
+                <img class="project-skill" src="./images/stack/HTML.png" alt="Error" />
+                <img class="project-skill" src="./images/stack/CSS.png" alt="Error" />
+                <img class="project-skill" src="./images/stack/Javascript.svg" alt="Error" />
+                <img class="project-skill" src="./images/stack/Express.png" alt="Error" />
+                <img class="project-skill" src="./images/stack/NextJsCircle.png" alt="Error" />
+                <img class="project-skill" src="./images/stack/Tailwind.png" alt="Error" />
+                <img class="project-skill" src="./images/stack/NodeJs.svg" alt="Error" />
+                <img class="project-skill" src="./images/stack/MongoDB.svg" alt="Error" />
+                <img class="project-skill" src="./images/stack/Redux.svg" alt="Error" />
+                <img class="project-skill" src="./images/stack/Vercel.svg" alt="Error" />
+            </div>
+
+            <h2 class="project-heading">Parallex Website</h2>
+
+            <p class="project-subHeading">Its is a Parallex Website build from scratch using 3D transformations and Perspective of CSS and HTML
+            </p>
+            <div class="btn-grp">
+                <button class="btn-pink btn-project">Read More</button>
+                <a href="https://ayu911.github.io/Parallex-Web.com/" target="_blank">
+                <i title="GitHubLink" class="fa-brands fa-github icon"></i>
+                </a>
+                <a href="https://ayu911.github.io/Parallex-Web.com/" target="_blank">
+                <i title="Live Link" class="fa-solid fa-link icon"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+<div class="project-card" id="project2">
+    <div class="project-number project-number-left">02</div> 
+    <div class="project-content project-content-right">
+      <div class="project-skill-container">
+        <img class="project-skill" src="./images/stack/HTML.png" alt="Error" />
+        <img class="project-skill" src="./images/stack/CSS.png" alt="Error" />
+        <img class="project-skill" src="./images/stack/Javascript.svg" alt="Error" />
+        <img class="project-skill" src="./images/stack/NextJsCircle.png" alt="Error" />
+        <img class="project-skill" src="./images/stack/Tailwind.png" alt="Error" />
+        <img class="project-skill" src="./images/stack/Redux.svg" alt="Error" />
+        <img class="project-skill" src="./images/stack/Vercel.svg" alt="Error" />
+      </div>
+      <h2 class="project-heading">Modern Image Gallery</h2>
+      <p class="project-sub-heading">
+        A platform to show Images inside an Image Gallery
+      </p>
+      <div class="btn-group">
+        <button class="btn-pink btn-project">Read More</button>
+        <a href="https://ayu911.github.io/Image-Gallery.com/" target="_blank">
+          <i title="GitHubLink" class="fa-brands fa-github icon"></i>
+        </a>
+        <a href="https://ayu911.github.io/Image-Gallery.com/" target="_blank">
+          <i title="Live Link" class="fa-solid fa-link icon"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-card" id="project3">
+    <div class="project-number project-number-right">03</div>
+    <div class="project-content project-content-left">
+      <div class="project-skill-container">
+        <img class="project-skill" src="./images/stack/HTML.png" alt="Error" />
+        <img class="project-skill" src="./images/stack/CSS.png" alt="Error" />
+        <img class="project-skill" src="./images/stack/Javascript.svg" alt="Error" />
+        <img class="project-skill" src="./images/stack/NextJsCircle.png" alt="Error" />
+        <img class="project-skill" src="./images/stack/Tailwind.png" alt="Error" />
+        <img class="project-skill" src="./images/stack/Vercel.svg" alt="Error" />
+      </div>
+
+      <h2 class="project-heading">PortFolio Website</h2>
+      <p class="project-sub-heading">
+        A Portfolio Website to showcase my Works and Skills acquired till now
+      </p>
+      <div class="btn-group">
+        <button class="btn-pink btn-project">Read More</button>
+        <a href="">
+          <i title="GitHubLink" class="fa-brands fa-github icon"></i>
+        </a>
+        <a href="">
+          <i title="Live Link" class="fa-solid fa-link icon"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-card" id="project4">
+    <div class="project-number project-number-left">04</div>
+    <div class="project-content project-content-right">
+      <div class="project-skill-container">
+        <img class="project-skill" src="./images/stack/NextJsCircle.png" alt="Error" />
+        <img class="project-skill" src="./images/stack/Tailwind.png" alt="Error" />
+        <img class="project-skill" src="./images/stack/Vercel.svg" alt="Error" />
+      </div>
+
+      <h2 class="project-heading">Granit</h2>
+      <p class="project-sub-heading">
+        A architectural website to plan your building or home (Hebrew
+        Language)
+      </p>
+      <div class="btn-group">
+        <button class="btn-pink btn-project">Read More</button>
+        <a href="">
+          <i title="GitHubLink" class="fa-brands fa-github icon"></i>
+        </a>
+        <a href="">
+          <i title="Live Link" class="fa-solid fa-link icon"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+   </div>
+</div>
+
+<div class="container skills-container" id="skills">
+
+<div class="skills-fade-text">Skills</div>
+
+<div class="skills-container-left">
+
+<h2 class="skills-heading">
+<span class="caps">M</span>e and
+<br>
+MyTech Stack
+</h2>
+
+<div class="skill-subHeading">
+
+<p>Hi Everyone My name is Ayush Chakraborty, I am a Full Stack Web Developer , and Currently I am working on myself, inorder to enhance my skills. Currently I am working on NodeJs and ReactJs and Making Beautiful UI-UX are my fey features</p>
+<br>
+<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non doloremque aspernatur, maiores voluptatum minus laudantium? Perspiciatis accusamus minima porro dolores necessitatibus, magni dolorem et qui veniam nulla sequi molestiae maxime.</p>
+<br>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis quidem quos ullam veritatis voluptates tenetur qui ipsa nulla culpa itaque?</p>
+
+
+</div>
+
+</div>
+
+<div class="skills-container-right">
+
+    <img src="./images/userAsset/blob vector.png" class="blob-style" alt="" />
+
+            <img src="./images/stack/HTML.png" alt="Error" class="skills-logo" />
+            <img src="./images/stack/CSS.png" alt="Error" class="skills-logo" />
+            <img src="./images/stack/Javascript.svg" alt="Error" class="skills-logo" />
+            <img src="./images/stack/React.png" alt="Error" class="skills-logo" />
+            <img src="./images/stack/NodeJs.svg" alt="Error" class="skills-logo" />
+            <img src="./images/stack/Next.svg" alt="Error" class="skills-logo" />
+            <img src="./images/stack/Redux.svg" alt="Error" class="skills-logo" />
+            <img src="./images/stack/Tailwind.png" alt="Error" class="skills-logo" />
+            <img src="./images/stack/Bootstrap.svg" alt="Error" class="skills-logo" />
+            <img src="./images/stack/MaterialUI.svg" alt="Error" class="skills-logo" />
+            <img src="./images/stack/Express.png" alt="Error" class="skills-logo" />
+            <img src="./images/stack/Git.svg" alt="Error" class="skills-logo" />
+            <img src="./images/stack/Github.svg" alt="Error" class="skills-logo" />
+            <img src="./images/stack/Graphql.svg" alt="Error" class="skills-logo" />
+            <img src="./images/stack/MongoDB.svg" alt="Error" class="skills-logo" />
+            <img src="./images/stack/Vercel.svg" alt="Error" class="skills-logo" />
+            <img src="./images/stack/ChartJs.svg" alt="Error" class="skills-logo" />
+            <img src="./images/stack/Bash.svg" alt="Error" class="skills-logo" />
+            <img src="./images/stack/Docker.svg" alt="Error" class="skills-logo" />
+            <img src="./images/stack/K8s.svg" alt="Error" class="skills-logo" />
+            
+</div>
+
+</div>
+
+
+<div class="contactus-form-container" id="contactme">
+
+<div class="container">
+
+<h1 class="contactus-Heading">Contact Me</h1>
+
+<h3 class="contactus-Sub-Heading">Questions,thoughts,or just want to say hello?</h3>
+
+<div class="contactus-form-container">  
+<form action="" class="HereForm">
+    <div class="formfield-container">
+<input type="text" class="Formfield" name="name" placeholder="Enter Your Name" id="nam">
+<br>
+<input type="email" class="Formfield" name="email" placeholder="Enter Your Email Id" id="ema">
+<br>
+<input type="text" class="Formfield" name="subject" placeholder="Enter Your Subject" id="sub">
+
+<textarea name="message" id="" cols="112" rows="10" placeholder="Enter Your Message" class="Formfield formfield-textarea"></textarea>
+
+</div>
+
+<div>
+    <button type="submit" id="submit-btn" class="btn-pink"> Send Message <i class="submit-icon fa-solid fa-paper-plane"></i></button>
+</div>
+
+</form>
+
+
+</div>
+
+</div>
+
+
+
+
+</div>
+
+<footer>
+
+    <div class="container">
+    
+    <div class="footer-wrapper">
+    
+    <div class="footer-faded-text">Ayush Chakraborty</div>
+    
+    
+    <div class="link-wrapper">
+    
+    <div>
+        <a href="#projects">Projects</a>
+    </div>
+    
+    <div>
+        <a href="#skills">Skills</a>
+    </div>
+    
+    <div>
+        <a href="#contactme">Contact Me</a>
+    </div>
+    
+    
+    <div class="icon-wrapper">
+    <i class="fa-brands fa-linkedin icon"></i>
+    <i class="fa-brands fa-github icon"></i>
+    <i class="fa-brands fa-twitter icon"></i>
+    <i class="fa-brands fa-instagram icon"></i>
+    <i class="fa-brands fa-envelope icon"></i> 
+    
+    </div>
+    
+    </div>
+    
+    
+    
+    </div>
+    </div>
+    
+    </footer>
+
+
+</div>
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://kit.fontawesome.com/58a810656e.js" crossorigin="anonymous"></script>
+  <script>
+    var typeData = new Typed(".role", {
+      strings: [
+        "Full Stack Developer",
+        "Web Developer",
+        "UI-UX Designer",
+        "Backend Developer",
+        "Coder",
+        "Footballer",
+        "Student",
+      ],
+      loop: true,
+      typeSpeed: 100,
+      backSpeed: 80,
+      backDelay: 1000,
+    });
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
